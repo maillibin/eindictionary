@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<HTML>
+
+<HEAD>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+<TITLE>E in Dictionary</TITLE>
+
+<STYLE TYPE="TEXT/CSS">
+body{
+	margin:0px;
+	padding:0px;
+	background-color:rgba(255,0,0,0.1);	
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+html{
+	height:100%;
+}
+.studio{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+.console{
+	position:fixed;
+	bottom:1em;
+	width:100%;
+	padding:0.5em;
+	text-align:center;
+}
+.consolebutton{
+	width:2em;
+	height:2em;
+	font-size:1.1em;
+	text-align:center;
+	border-radius:50%;
+	background-color:rgba(255,0,0,0.3);
+	color:white;
+	vertical-align:center;
+	
+}
+.book{
+	border-radius:3em;
+	width:100%;
+	padding-top:10em;
+	padding-bottom:10em;
+	background-color:rgba(255,102,102,0.3);
+	box-shadow:0em 0em 8em rgba(0,0,0,0.3);
+	transform-style:preserve-3d;
+	-webkit-transform-style:preserve-3d;
+	-moz-transform-style:preserve-3d;
+	
+	transform:perspective(5000px) rotateX(30deg) rotateZ(-24deg);	
+	-webkit-transform:perspective(5000px) rotateX(30deg) rotateZ(-24deg);
+	-moz-transform:perspective(5000px) rotateX(30deg) rotateZ(-24deg);
+}
+
+.case{
+	border-radius:1em 0em 0em 1em;
+	margin:auto;
+	padding:0em;
+	min-width:10em;
+	max-width:15em;
+	height:auto;
+	min-height:12em;
+	background-color:rgba(255,255,255,1);
+	transform-style:preserve-3d;
+	-webkit-transform-style:preserve-3d;
+	-moz-transform-style:preserve-3d;
+	perpective:1000px;
+	-webkit-perpective:1000px;
+	transform:translateZ(5em);
+	-webkit-transform:translateZ(5em);
+	-moz-transform:translateZ(5em);
+}
+.cover{
+	border-radius:1em 0em 0em 1em;
+	overflow:hidden;
+	background-color:rgba(255,106,106,1);
+	margin:0px;
+	transform-style:preserve-3d;
+	-webkit-transform-style:preserve-3d;
+	-moz-transform-style:preserve-3d;
+	perpective:1000px;
+	-webkit-perpective:1000px;
+	-moz-perpective:1000px;
+	transform-origin:100% 100%;
+	-webkit-transform-origin:100% 100%;
+	-moz-transform-origin:100% 100%;
+	transform:rotateY(0deg);
+	-webkit-transform:rotateY(0deg);
+	-moz-transform:rotateY(0deg);
+	transition:all 2s;
+	-webkit-transition:all 2s;
+	-moz-transition:all 2s;
+	
+	backface-visibility:visible;
+	-webkit-backface-visibility:visible;
+	-moz-backface-visibility:visible;	
+}
+
+.coveropen{
+	border-radius:1em 0em 0em 1em;
+	overflow:hidden;
+	background-color:rgba(255,106,106,1);
+	margin:0px;
+	transform-style:preserve-3d;
+	-webkit-transform-style:preserve-3d;
+	-moz-transform-style:preserve-3d;
+	perpective:1000px;
+	-webkit-perpective:1000px;
+	-moz-perpective:1000px;
+	transform-origin:100% 100%;
+	-webkit-transform-origin:100% 100%;
+	-moz-transform-origin:100% 100%;
+	transform:rotateY(120deg);
+	-webkit-transform:rotateY(120deg);
+	-moz-transform:rotateY(120deg);
+	transition:all 2s;
+	-webkit-transition:all 2s;
+	-moz-transition:all 2s;
+	
+	backface-visibility:visible;
+	-webkit-backface-visibility:visible;
+	-moz-backface-visibility:visible;
+	
+}
+.coverinner{
+	border-radius:1em 0em 0em 1em;
+	overflow:hidden;
+	min-height:18em;
+	padding:1em;
+	background-color:rgba(255,106,106,1);
+	backface-visibility:hidden;
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;	
+}
+.paper{
+	border-radius:1em 0em 0em 1em;
+	overflow:hidden;
+	position:absolute;
+	width:100%;
+	height:100%;
+	background-color:rgba(255,255,255,0.6);
+	box-shadow:0px 0px 1em rgba(0,0,0,0.3);
+	transform-style:preserve-3d;
+	-webkit-transform-style:preserve-3d;
+	-moz-transform-style:preserve-3d;
+	perpective:1000px;
+	-webkit-perpective:1000px;
+	-moz-perpective:1000px;
+	transform:translateZ(-4em);
+	-webkit-transform:translateZ(-4em);
+	-moz-transform:translateZ(-4em);
+}
+#back{
+	border-radius:1em 0em 0em 1em;
+	overflow:hidden;
+	position:absolute;
+	width:100%;
+	height:100%;
+	background-color:rgba(255,106,106,1);
+	box-shadow:0em 0em 4em rgba(0,0,0,0.3);
+	transform-style:preserve-3d;
+	-webkit-transform-style:preserve-3d;
+	-moz-transform-style:preserve-3d;
+	
+	transform:translateZ(-5em);
+	-webkit-transform:translateZ(-5em);
+	-moz-transform:translateZ(-5em);
+}
+#page1{
+	transform:translateZ(-3em);
+	-webkit-transform:translateZ(-3em);
+	-moz-transform:translateZ(-3em);
+}
+#page3{
+	transform:translateZ(-2.5em);
+	-webkit-transform:translateZ(-2.5em);
+	-moz-transform:translateZ(-2.5em);
+}
+#page3{
+	transform:translateZ(-2em);
+	-webkit-transform:translateZ(-2em);
+	-moz-transform:translateZ(-2em);
+}
+#page4{
+	transform:translateZ(-1.5em);
+	-webkit-transform:translateZ(-1.5em);
+	-moz-transform:translateZ(-1.5em);
+}
+#page5{
+	transform:translateZ(-1em);
+	-webkit-transform:translateZ(-1em);
+	-moz-transform:translateZ(-1em);
+}
+#page6{
+	transform:translateZ(-0.5em);
+	-webkit-transform:translateZ(-0.5em);
+	-moz-transform:translateZ(-0.5em);
+}
+.mainpage{
+	background-color:rgba(255,255,255,0.6);
+	border-radius:1em 0em 0em 1em;
+	overflow:hidden;
+	position:absolute;
+	width:100%;
+	height:100%;
+	box-shadow:0px 0px 1em rgba(0,0,0,0.3);
+}
+.mainpageinner{
+	border-radius:1em 0em 0em 1em;
+	overflow:hidden;
+	margin:auto;
+	padding:1em;
+}
+.meaning{
+	font-size:0.8em;
+}
+.spine{
+	position:absolute;
+	right:0px;
+	top:0px;
+	background-color:rgba(255,106,106,1);
+	width:5em;
+	height:100%;
+	transform-style:preserve-3d;
+	-webkit-transform-style:preserve-3d;
+	-moz-transform-style:preserve-3d;
+	perpective:1000px;
+	-webkit-perpective:1000px;
+	-moz-perpective:1000px;
+	transform-origin:100% 100%;
+	-webkit-transform-origin:100% 100%;
+	-moz-transform-origin:100% 100%;
+	transform:rotateY(-90deg);
+	-webkit-transform:rotateY(-90deg);
+	-moz-transform:rotateY(-90deg);
+}
+
+.booktitle{
+	text-align:center;
+	width:1.5em;
+	font-size:1.5em;
+	padding:0.3em;
+	border:0.5em solid rgba(255,0,0,0.3);
+	background-color:white;
+	color:rgba(255,106,106,1);
+	box-shadow:0em 0em 1em rgba(255,0,0,0.6);
+	transform-style:preserve-3d;
+	-webkit-transform-style:preserve-3d;
+	-moz-transform-style:preserve-3d;
+	perpective:1000px;
+	-webkit-perpective:1000px;
+	-moz-perpective:1000px;
+	backface-visibility:hidden;
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+	
+}
+.inputdiv{
+	width:80%;
+	margin:auto;
+	display:flex;
+	justify-content:center;
+	border-radius:1em;
+	vertical-align:center;
+}
+.word{
+	flex-grow:1;
+	margin:auto;
+	margin-left:0.5em;
+	margin-right:0.5em;
+	padding:0.5em;
+	font-size:1em;
+	color:red;
+	text-align:center;
+	border-radius:1em;
+	background-color:rgba(255,255,255,0.9);	
+	border:0em solid rgba(255,102,102,0.5);
+	box-shadow:0em 0em 2em rgba(255,102,102,0.6);	
+}
+
+.searchsign{
+	display:inline-block;
+	width:1em;
+	height:1em;
+	margin:0.5em;
+	background-color:rgba(255,0,0,0.3);
+	border:2px solid rgba(255,0,0,0.6);
+	border-radius:50%;
+	vertical-align:center;
+}
+
+.inputicon{
+	flex-shrink:0;/*避免空间被挤压变形*/
+	-webkit-flex-shrink:0;
+	-moz-flex-shrink:0;
+	width:1.2em;
+	height:1.2em;
+	background-color:rgba(255,0,0,0.3);
+	box-shadow:0em 0em 2em rgba(255,102,102,0.6);
+	border-radius:50%;
+	padding:0.4em;
+}
+
+.help,.modify,.save{
+	position:absolute;
+	margin:0px;
+	padding:0px;
+	width:100%;
+	height:100%;
+	top:0px;
+	left:0px;
+	background-color:rgba(255,102,102,0.8);
+	display:none;
+	overflow:auto;
+}
+
+.helpinfo{
+	margin:2em;
+	margin-top:4em;
+	color:white;
+	text-align:center;
+}
+.helpinfo hr{
+	border:none;
+	border-top:1px dashed white;
+}
+
+.closehead{
+	position:fixed;
+	top:0px;
+	width:100%;
+	background-color:pink;
+	text-align:right;
+}
+.closebutton{
+	width:1em;
+	height:1em;
+	border-radius:50%;
+	border:0px;
+	margin:1em;
+	background-color:rgba(255,255,255,0.5);
+}
+.closebutton:hover{
+	transform:scale(2);
+	transition:all 1s;
+}
+.wordinfo{
+	position:fixed;
+	width:100%;
+	top:2.5em;
+	margin:0em;
+	color:white;
+	background-color:rgba(255,102,102,1);
+	text-align:center;
+	box-shadow:0em 0em 2em rgba(255,0,0,0.3);
+}
+
+.selectiondiv{
+	margin-top:15em;
+}
+.characterselection{
+	background-color:rgba(255,25,25,0.3);
+	margin:1em;
+	border:0px;
+	text-align:center;
+	border-radius:1em;
+}
+.characterselection legend{
+	width:1.5em;
+	height:1.5em;
+	padding:0.1em;
+	border-radius:0.5em;
+	color:white;
+	font-size:3em;
+	background-color:rgba(255,102,102,0.9);
+	box-shadow:0em 0em 2em white;
+	
+}
+.characterselection button{	
+	width:3em;
+	height:3em;
+	padding:0em;
+	text-align:center;
+	background-color:rgba(255,235,235,0.9);
+	border-radius:50%;
+	border:4px solid rgba(255,0,0,0.3);
+	color:red;
+}
+.assets{
+	display:none;
+}
+.menubuttons{
+	margin:1em;
+	display:none;
+	transition:all 1s;
+}
+#savedwords{
+	margin:1em;
+	margin-top:8em;
+	text-align:center;	
+	color:white;
+	font-size:1.2em;
+}
+
+.memorizedtransliteration{
+	display:inline-block;
+	transform-style:preserve-3d;
+	perspective:250px;
+}
+
+.memorizedtransliteration:hover{
+	transition:all 1s;
+}
+.memorizedtransliteration:hover .memorizedword{
+	transform:rotateX(0deg);
+}
+.memorizedtransliteration:hover .transliterationdiv{
+	transform:rotateX(0deg);
+}
+
+.memorizedword{
+	margin:0em;
+	padding:0.5em;
+	color:rgba(255,0,0,0.8);	
+	background-color:rgba(255,255,255,0.9);	
+	border-radius:0.5em 0.5em 0em 0em;	
+	transform:rotateX(-45deg);
+	transform-origin: 100% 100%;
+}
+.transliterationdiv{
+	margin:0em;
+	padding:0.5em;	
+	color:white;
+	background-color:rgba(255,102,102,0.3);
+	border-radius:0em 0em 0.5em 0.5em;	
+	box-shadow:0em 1em 2em rgba(0,0,0,0.5);	
+	transform:rotateX(45deg);
+	transform-origin: 0% 0%;	
+}
+
+
+</STYLE>
+
+
+
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="hammer.min.js"></script>
+
+<script type="text/javascript" src="EnglishPronunciation.js"></script>
+<script type="text/javascript" src="phoneticize.js"></script>		
+<script type="text/javascript" src="Homophone.js"></script>
+<script type="text/javascript" src="ChineseCharacters.js"></script>
+<script type="text/javascript" src="EnglishDictionary.js"></script>
+
+</HEAD>
+
+<BODY>
+
+<!--主窗口-->
+<div class="studio" id="studio">
+	
+	<!--词典立体图形-->
+	<div class="book" id="book">
+	
+		<div class="case">
+		
+			<div class="paper" id="back"></div>
+			
+			<div class="paper" id="page1"></div>			
+			<div class="paper" id="page2"></div>
+			<div class="paper" id="page3"></div>
+			<div class="paper" id="page4"></div>
+			<div class="paper" id="page5"></div>
+			<div class="paper" id="page6"></div>
+			
+			<div class="spine"></div>
+			
+			<div class="mainpage">
+				<div class="mainpageinner" id="mainpageinner">
+					<h3 id="englishword">易音大典</h3>
+					<hr/>
+					<h4 id="phonemes">E in Dictionary</h4>
+					<h3 id="transliteration">亿忆亦一易</h3>
+					<p id="meaning" class="meaning">
+						用心观想 世间音声
+					</p>					
+				</div>
+			</div>
+			
+			<div class="cover" id="cover" onclick="openBook()">
+				<div class="coverinner">
+					<div id="covertitle" class="booktitle">易音大典</div>
+				</div>				
+			</div>	
+			
+		</div>		
+	
+	</div>
+	
+	
+	<!--控制栏-->
+	<div class="console">
+	
+		<div id="menubuttons" class="menubuttons">
+			<button class="consolebutton" onclick="zoomOut()">-</button>
+			<button class="consolebutton" onclick="skewLeft()">↖</button>
+			<button class="consolebutton" onclick="help()">助</button>
+			<button class="consolebutton" onclick="modify()">改</button>
+			<button class="consolebutton" onclick="save()">存</button>			
+			<button class="consolebutton" onclick="skewRight()">↗</button>
+			<button class="consolebutton" onclick="zoomIn()">+</button>
+		</div>
+		
+		<div class="inputdiv">
+			<span id="menuicon" class="inputicon" onclick="showMenuButtons()"></span>
+			<input id="word" type="text" class="word" onkeypress="inputEnter(event)"/>
+			<span id="searchicon" class="inputicon" onclick="transliterate();adjustSize();"></span>
+		</div>
+
+		
+	</div>
+	
+	<!--帮助页面-->
+	<div class="help" id="help">
+		
+		<div class="helpinfo">
+			<h1>易音大典</h1>
+			<h3>EINDICTIONARY</h3>
+			易音大典是英汉译音词典<br/>
+            译音选用同音或近音汉字<br/>
+            同一音节有多个译音备选<br/>
+            可联想编创故事辅助记忆<br/>
+			<hr/>
+            在输入栏中输入英文单词<br/>
+            点击查询按钮可显示译音<br/>
+			点击书封可翻开显示释义<br/>
+			点击菜单按钮可改选译音<br/>
+			译音亦可保存到本地备忘<br/>	
+			<hr/>
+			<br/>
+            本应用客服群
+			<br/><br/>
+            QQ 211075080
+			<br/><br/>
+            易千忆学堂
+			
+		</div>
+		
+		<div class="closehead">
+			<button class="closebutton" onclick="help()"></button>
+		</div>	
+	
+	</div>
+	
+	<!--保存页面-->
+	<div class="save" id="save">
+	
+		<div id="savedwords"></div>
+		
+		<div class="closehead">
+			<button class="closebutton" onclick="saveShow()"></button>
+		</div>		
+		
+	</div>
+	
+	<!--修改页面-->
+	<div class="modify" id="modify">
+		
+		<div id="selectiondiv" class="selectiondiv"></div>
+		
+		<div class="wordinfo">
+			<h3 id="englishword1"></h3>
+			<h3 id="pronunciation"></h3>
+			<h3 id="transliteration1"></h3>
+		</div>
+		
+		<div class="closehead">
+			<button class="closebutton" onclick="modify()"></button>
+		</div>		
+	
+	</div>
+	
+	<!--svg图片资源-->
+	<div class="assets">
+		
+		<svg id="searchsvg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 100 100">
+		
+			<g style="fill:none;stroke:white;stroke-width:10">				
+				<circle cx="50" cy="50" r="40"/>				
+				<line x1="100" y1="100" x2="78" y2="78"/>			
+			</g>
+			
+		</svg>
+		
+		<svg id="menusvg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 100 100">
+		
+			<g style="fill:none;stroke:white;stroke-width:10">				
+				<line x1="10" y1="20" x2="90" y2="20"/>	
+				<line x1="10" y1="50" x2="90" y2="50"/>	
+				<line x1="10" y1="80" x2="90" y2="80"/>	
+			</g>
+			
+		</svg>
+
+	</div>
+	
+</div>
+
+</BODY>
+	
+<!--主要代码-->
+
+<SCRIPT TYPE="TEXT/JAVASCRIPT">
+	
+	//SVG图片资源添加到对应元素
+	$("#searchicon").append($("#searchsvg"));
+	$("#menuicon").append($("#menusvg"));
+	
+	//先设定style然后才能获取到 否则获取不到style字串
+	$("#book").css("transform","perspective(5000px) rotateX(30deg) rotateY(0deg) rotateZ(-24deg) scaleX(1) scaleY(1) scaleZ(1)");
+	
+	//获取book的transform rotateX旧值
+	function getRotateX(){				
+		var bookStyleString=document.getElementById('book').style.transform;
+		var rotateXString=/rotateX\(-?\d+deg\)/.exec(bookStyleString);
+		var rotateXValue=0;
+		if(rotateXString!=null){
+			var rotateXValueString=/-?\d+/.exec(rotateXString);
+			rotateXValue=parseInt(rotateXValueString[0]);		
+		}else{
+			rotateXValue=0;
+		}
+		return rotateXValue;		
+	}
+	
+	//获取book的transform rotateY旧值
+	function getRotateY(){				
+		var bookStyleString=document.getElementById('book').style.transform;
+		var rotateYString=/rotateY\(-?\d+deg\)/.exec(bookStyleString);
+		var rotateYValue=0;
+		if(rotateYString!=null){
+			var rotateYValueString=/-?\d+/.exec(rotateYString);
+			rotateYValue=parseInt(rotateYValueString[0]);	
+		}else{
+			rotateYValue=0;
+		}
+		return rotateYValue;		
+	}
+	
+	//获取book的transform rotateZ旧值
+	function getRotateZ(){				
+		var bookStyleString=document.getElementById('book').style.transform;
+		var rotateZString=/rotateZ\(-?\d+deg\)/.exec(bookStyleString);
+		var rotateZValue=0;
+		if(rotateZString!=null){
+			var rotateZValueString=/-?\d+/.exec(rotateZString);
+			rotateZValue=parseInt(rotateZValueString[0]);	
+		}else{
+			rotateZValue=0;
+		}
+		return rotateZValue;		
+	}
+	
+	//获取book的transform scaleX scaleY scaleZ旧值
+	function getScale(){				
+		var bookStyleString=document.getElementById('book').style.transform;
+		var scaleString=/scale[X|Y|Z]\(\d+(\.\d+(e-\d+)?)?\)/.exec(bookStyleString);
+		var scaleValue=1;
+		if(scaleString!=null){
+			var scaleValueString=/\d+(\.\d+(e-\d+)?)?/.exec(scaleString);
+			scaleValue=parseFloat(scaleValueString[0]);
+		}else{
+			scaleValue=1;
+		}
+		return scaleValue;		
+	}
+	
+	//hammer.js管理触屏事件	
+	var hammerTest = new Hammer(document.getElementById('book'));
+	hammerTest.get('swipe').set({direction: Hammer.DIRECTION_ALL});
+	
+	//屏幕左滑则左翻桌面
+	hammerTest.on("swipeleft",function(ev){
+		var rotateY=getRotateY();	
+		rotateY-=5;
+		var bookStyleString=document.getElementById('book').style.transform;
+		var newBookStyleString=bookStyleString.replace(/(rotateY\()(-?\d+)(deg\))/gi,"$1"+rotateY+"$3");
+		//console.log("newBookStyleString = ",newBookStyleString);
+		$("#book").css("transform",newBookStyleString);		
+	});
+	
+	//屏幕右滑则右翻桌面
+	hammerTest.on("swiperight",function(ev){
+		var rotateY=getRotateY();	
+		rotateY+=5;
+		var bookStyleString=document.getElementById('book').style.transform;
+		var newBookStyleString=bookStyleString.replace(/(rotateY\()(-?\d+)(deg\))/gi,"$1"+rotateY+"$3");
+		//console.log("newBookStyleString = ",newBookStyleString);
+		$("#book").css("transform",newBookStyleString);		
+	});
+	
+	//屏幕上滑则上翻桌面
+	hammerTest.on("swipeup",function(ev){
+		var rotateX=getRotateX();	
+		rotateX+=5;
+		var bookStyleString=document.getElementById('book').style.transform;
+		var newBookStyleString=bookStyleString.replace(/(rotateX\()(-?\d+)(deg\))/gi,"$1"+rotateX+"$3");
+		//console.log("newBookStyleString = ",newBookStyleString);
+		$("#book").css("transform",newBookStyleString);		
+	});
+	
+	//屏幕下滑则下翻桌面
+	hammerTest.on("swipedown",function(ev){
+		var rotateX=getRotateX();	
+		rotateX-=5;
+		var bookStyleString=document.getElementById('book').style.transform;
+		var newBookStyleString=bookStyleString.replace(/(rotateX\()(-?\d+)(deg\))/gi,"$1"+rotateX+"$3");
+		//console.log("newBookStyleString = ",newBookStyleString);
+		$("#book").css("transform",newBookStyleString);		
+	});
+	
+	
+	
+	//放大词典
+	function zoomIn(){
+		var scale=getScale();
+		scale+=0.1;
+		scale=parseFloat(scale).toFixed(1);
+		//console.log("current scale = "+scale);
+		var bookStyleString=document.getElementById('book').style.transform;
+		var newBookStyleString=bookStyleString.replace(/(scale[X|Y|Z]\()(\d+(\.\d+(e-\d+)?)?)(\))/gi,"$1"+scale+"$5");
+		//console.log("newBookStyleString = ",newBookStyleString);
+		$("#book").css("transform",newBookStyleString);
+	}
+	
+	//缩小词典
+	function zoomOut(){
+		var scale=getScale();
+		scale-=0.1;
+		if(scale<0.1){
+			scale=0.1;
+		}
+		scale=parseFloat(scale).toFixed(1);
+		//console.log("current scale = "+scale);
+		var bookStyleString=document.getElementById('book').style.transform;
+		var newBookStyleString=bookStyleString.replace(/(scale[X|Y|Z]\()(\d+(\.\d+(e-\d+)?)?)(\))/gi,"$1"+scale+"$5");
+		//console.log("newBookStyleString = ",newBookStyleString);
+		$("#book").css("transform",newBookStyleString);
+	}
+	
+	//桌面左倾
+	function skewLeft(){
+		var rotateZ=getRotateZ();	
+		rotateZ-=6;
+		var bookStyleString=document.getElementById('book').style.transform;
+		var newBookStyleString=bookStyleString.replace(/(rotateZ\()(-?\d+)(deg\))/gi,"$1"+rotateZ+"$3");
+		//console.log("newBookStyleString = ",newBookStyleString);
+		$("#book").css("transform",newBookStyleString);	
+	}
+	
+	//桌面右倾
+	function skewRight(){
+		var rotateZ=getRotateZ();	
+		rotateZ+=6;
+		var bookStyleString=document.getElementById('book').style.transform;
+		var newBookStyleString=bookStyleString.replace(/(rotateZ\()(-?\d+)(deg\))/gi,"$1"+rotateZ+"$3");
+		//console.log("newBookStyleString = ",newBookStyleString);
+		$("#book").css("transform",newBookStyleString);		
+	}
+	
+	
+	//-----------------------------------------------
+	
+	//检测封面是否已经打开
+	var isBookOpened=false;	
+	//翻开或合上字典封面
+	function openBook(){
+		if(!isBookOpened){
+			$("#cover").attr("class","coveropen");
+			isBookOpened=true;
+		}else{
+			$("#cover").attr("class","cover");
+			isBookOpened=false;
+		}		
+	}
+	
+	//显示帮助界面
+	function help(){
+		$("#help").slideToggle("slow");
+	}
+	//显示修改选字界面
+	function modify(){
+		$("#modify").slideToggle("slow");
+	}
+	//显示保存界面
+	function saveShow(){
+		$("#save").slideToggle("slow");
+	}
+	//显示菜单按钮
+	function showMenuButtons(){
+		$("#menubuttons").slideToggle("slow");
+	}
+	
+	//在输入栏内按回车后执行操作
+	function inputEnter(){
+		if (event.keyCode == 13) {
+			transliterate();
+			adjustSize();
+        }
+	}
+	
+	//调整尺寸页面和封面的高度防止溢出
+	function adjustSize(){
+		$("#mainpageinner").css("height","auto");
+		$("#cover").css("height","auto");
+		mainpageinnerHeight=$("#mainpageinner").outerHeight();
+		coverHeight=$("#cover").outerHeight();
+		if(mainpageinnerHeight>coverHeight){
+			$("#mainpageinner").outerHeight(mainpageinnerHeight);
+			$("#cover").outerHeight(mainpageinnerHeight);
+		}else{
+			$("#mainpageinner").outerHeight(cover);
+			$("#cover").outerHeight(cover);
+		}
+	}
+	
+	//-----------------------------------------------
+	//主程序
+	
+	//存储所输入的单词
+    var currentEnglishWord = "";
+	//译音存储记忆
+	var memorizedTransliteration=[];
+	//译音程序	
+	function transliterate(){
+		var englishWord=$.trim($("#word").val());
+		if (englishWord == "") {
+			return;
+        }
+		var englishWordLowerCase = englishWord.toLowerCase();
+		currentEnglishWord = englishWord;
+		
+		//获取输入单词后清空输入框方便下次输入
+        $("#word").val("").focus();
+		
+		
+		//注意单词音标的JSON格式phonetics.$word:"phoneticSymbols"
+        var phoneticSymbols = eval("phonetics.$" + englishWordLowerCase);
+		
+		//如果音标数据文件中找不到对应单词音标则使用phoneticize自动音标生成
+		if(phoneticSymbols==undefined){
+			phoneticSymbols=phoneticize(englishWordLowerCase);
+		}
+		
+		var syllableResult = divideSyllables(phoneticSymbols);
+		
+		//音节转换为拼音
+        var pinyinResult = ep2cp(syllableResult);
+		
+		//备选汉字组
+        var chineseResultArrary = p2c(pinyinResult);
+		
+		//译音汉字组
+        var transliterationWords = "";
+					
+		//译音存储记忆
+		memorizedTransliteration=[];
+                    
+        var chineseCharactersHtml = ""; 
+
+		for (var i = 0; i < chineseResultArrary.length; i++) {
+						
+			transliterationWords += "<span name='transliterationWord" + i + "'>" + chineseResultArrary[i].charAt(0) + "</span>";
+			
+			memorizedTransliteration[i]=chineseResultArrary[i].charAt(0);
+			
+			chineseCharactersHtml+="<fieldset class='characterselection'><legend id='transliterationCharacter"+i+"'>"+chineseResultArrary[i].charAt(0)+"</legend>";
+			
+			var wordListLength = chineseResultArrary[i].length;
+						
+            for (var j = 0; j < wordListLength; j++) {							
+				chineseCharactersHtml+="<button class='characterButton' onclick=changeTransliterationWord("+i+",'"+chineseResultArrary[i].charAt(j)+"')>"+chineseResultArrary[i].charAt(j)+"</button>";
+            }
+			
+			chineseCharactersHtml+="</fieldset>"
+						
+        }
+		
+		
+		//显示结果
+		$("#englishword").html("");
+		$("#englishword").html(englishWord);
+		$("#englishword1").html(englishWord);
+		
+		$("#phonemes").html("");
+		$("#phonemes").html(phoneticSymbols);	
+		$("#phonemes").attr("onclick","readWord('"+englishWord+"')");
+		$("#pronunciation").html(phoneticSymbols);
+		
+		$("#covertitle").html("");
+		$("#covertitle").html(transliterationWords);
+		$("#transliteration").html(transliterationWords);
+		$("#transliteration1").html(transliterationWords);
+		
+		$("#selectiondiv").html("");
+		$("#selectiondiv").html(chineseCharactersHtml);
+		
+		//显示释义
+		var meaningOfWord = findWordMeaning(englishWordLowerCase);
+		$("#meaning").html("");
+        if (meaningOfWord != undefined) {
+			meaningOfWord = meaningOfWord.replace(/\w+\./g, "<br/>$&");
+            $("#meaning").html(meaningOfWord);
+        }
+		
+
+	}
+	
+	
+	//-----------------------------------------------
+	
+	//拆分音节程序
+	function divideSyllables(inputSyllables) {
+		var resultArray = new Array();
+		var sMax = 5;
+		//在原输入字串前添加sMax=5个空格，方便后面操作
+		var inputStr = "     " + inputSyllables;
+		var sLEN = inputStr.length;
+
+		var rightIndex = sLEN - 1;
+		var leftIndex = sMax;
+
+		for (var i = rightIndex; i >= leftIndex; i--) {
+
+			for (var j = 5; j >= 1; j--) {
+
+				var starPos = i - j + 1;
+				var slice = inputStr.substr(starPos, j);
+
+				if (existSyllable(slice)) {
+					resultArray.push(slice);
+					i = i - j + 1;
+					break;
+				}
+
+			}
+
+		}
+
+		return resultArray.reverse();
+	}
+			
+	//判断音节是否存在
+	function existSyllable(phonemes) {
+		var found = typeof (e2p[phonemes]) != "undefined";
+		return found;
+	}
+	
+	//英语音标转换为汉语拼音
+	function ep2cp(epArray) {
+		var pinyinArray = new Array();
+		var aLen = epArray.length;
+
+		for (var i = 0; i < aLen; i++) {
+			pinyinArray[i] = e2p[epArray[i]];
+		}
+
+		var pinyinString = pinyinArray.join(" ");
+		var resultPinyinArray = pinyinString.split(" ");
+
+		return resultPinyinArray;
+	}
+	
+	//汉语拼音转换为汉字
+	function p2c(cpArray) {
+		var ccArray = new Array();
+		var pLen = cpArray.length;
+
+		for (var i = 0; i < pLen; i++) {
+			ccArray[i] = chinese[cpArray[i]];
+		}
+
+		return ccArray;
+
+	}
+	
+	//查词典释义
+	function findWordMeaning(word) {
+		return wordMeaning["$" + word];
+	}
+	
+	
+	//改变译音汉字选项
+	function changeTransliterationWord(i, value) {
+		$("[name='transliterationWord" + i+"'").html(value);   
+		$("#transliterationCharacter" + i).html(value); 	
+		memorizedTransliteration[i]=value;
+	}
+	
+	
+	//将数据存储到localStorage			
+	function save(){
+		saveShow();
+		saveTransliteration(currentEnglishWord,memorizedTransliteration.join(""));
+		if(localStorage){
+			var localDictionary=localStorage.getItem("savedDictionary");
+			if(localDictionary){
+				var localDictionaryJSON=JSON.parse(localDictionary);
+				var text="";
+				var keyArray=[];
+				for(word in localDictionaryJSON){					
+					keyArray.push(word);					
+				}
+				//JSON按key值排序
+				keyArray.sort();
+				
+				for(var i=0;i<keyArray.length;i++){
+					if($.trim(keyArray[i])!=""&&$.trim(localDictionaryJSON[keyArray[i]])!=""){
+						text+="<div class='memorizedtransliteration'>";
+						text+="<div class='memorizedword'>"+localDictionaryJSON[keyArray[i]]+"</div><div class='transliterationdiv'>"+keyArray[i]+"</div>";
+						text+="</div><br/>";
+					}
+				}
+					
+				$("#savedwords").html(text);
+			}
+		}
+	}
+	
+	//localStorage存储
+	function saveTransliteration(key,value){
+		if(localStorage){
+			var localDictionary=localStorage.getItem("savedDictionary");
+			if(localDictionary){
+				var localDictionaryJSON=JSON.parse(localDictionary);
+				localDictionaryJSON[key]=value;
+				var localDictionaryString=JSON.stringify(localDictionaryJSON);
+				localStorage.setItem("savedDictionary",localDictionaryString);
+			}else{
+				var localDictionaryJSON={};
+				localDictionaryJSON[key]=value;
+				var localDictionaryString=JSON.stringify(localDictionaryJSON);
+				localStorage.setItem("savedDictionary",localDictionaryString);
+			}				
+		}			
+	}
+	
+	
+	//点击音标发音朗读单词
+	function readWord(word){
+		var speechInstance=new SpeechSynthesisUtterance();
+		speechInstance.text=word;
+		speechSynthesis.speak(speechInstance);
+	}
+	
+	
+	
+	
+
+</SCRIPT>
+
+</HTML>
