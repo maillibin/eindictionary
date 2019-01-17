@@ -3,10 +3,53 @@
 
 <HEAD>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
 <TITLE>E in Dictionary</TITLE>
 
 <STYLE TYPE="TEXT/CSS">
+
+@keyframes flip-page
+{
+	0% {transform:rotateY(0deg);background-color:rgba(255,0,0,0);}
+	50% {transform:rotateY(180deg);background-color:rgba(255,0,0,1);}
+	100% {transform:rotateY(0deg);background-color:rgba(255,0,0,0);}
+}
+@keyframes flip-page0
+{
+	0% {transform:rotateY(0deg);background-color:rgba(255,0,0,0);}
+	50% {transform:rotateY(-180deg);background-color:rgba(255,0,0,1);}
+	100% {transform:rotateY(0deg);background-color:rgba(255,0,0,0);}
+}
+
+.animation-frame{
+	transform-style:preserve-3d;
+	transform-origin:0% 0%;
+	animation:flip-page 1s;//单词列表页面翻转动画
+	perpective:1000;
+	-webkit-perpective:1000;
+}
+
+.animation-frame0{
+	transform-style:preserve-3d;
+	transform-origin:100% 0%;
+	animation:flip-page0 1s;//单词列表页面翻转动画
+	perpective:1000;
+	-webkit-perpective:1000;
+}
+
+
+@keyframes flip-cover
+{
+	0% {transform:rotateY(0deg);}
+	50% {transform:rotateY(120deg);}
+	100% {transform:rotateY(0deg);}
+}
+
+.flip-cover-frame{
+	animation:flip-cover 3s;//词典封面翻转动画
+}
+
+
 body{
 	margin:0px;
 	padding:0px;
@@ -306,7 +349,7 @@ html{
 	padding:0.4em;
 }
 
-.help,.modify,.save{
+.help,.modify,.save,.listing, .find{
 	position:absolute;
 	margin:0px;
 	padding:0px;
@@ -361,7 +404,7 @@ html{
 }
 
 .selectiondiv{
-	margin-top:15em;
+	margin-top:13em;
 }
 .characterselection{
 	background-color:rgba(255,25,25,0.3);
@@ -443,7 +486,170 @@ html{
 	transform-origin: 0% 0%;	
 }
 
+.listcontrol{
+	position:fixed;
+	bottom:1em;
+	width:100%;
+	text-align:center;
+}
+.listcontrol button{
+	padding:0px;
+	margin:0.15em;
+	background-color:#ff6666;
+	border-radius:1.2em;
+	color:white;
+	width:2.4em;
+	height:2.4em;
+	text-align:center;
+}
+#btn0{
+	transform:scale(1.2);
+}
+#btn1,#btn2{
+	transform:scale(1);
+}
+#btn3,#btn4{
+	transform:scale(1.1);
+}
+#btn5,#btn6{
+	transform:scale(1.2);
+}
 
+.wordlist{
+	margin-top:3em;
+	text-align:center;
+	padding-bottom:5em;
+}
+.wordlist hr, #matchwordlist hr{
+	margin:3px;
+	border:none;
+}
+
+.listed-word{
+	color:white;
+	text-shadow:0px 2px 2px rgba(0,0,0,0.5);	
+}
+.listed-pronunciation{
+	padding:0.5em;
+	color:rgba(255,255,255,0.3);	
+}
+.meaningdiv{
+	position:fixed;
+	top:2em;
+	width:100%;
+}
+
+.innerMeaningdiv{
+	margin:2em;
+	padding:1em;
+	padding-bottom:3em;	
+	color:#666666;
+	background-color:#ffeeee;
+	border-radius:2em;
+	text-align:center;
+	box-shadow:0em 1em 2em rgba(0,0,0,0.5);
+}
+
+.innerMeaningdiv h2{
+	color:rgba(255,102,120,0.6);
+}
+
+#indexNumber{
+	display:inline-block;
+	margin:0.5em;
+	padding:0.1em 1em 0.1em 1em;
+	background-color:rgba(255,102,102,0.9);
+	color:white;
+	border-radius:1em;
+	box-shadow:0em 0em 0.5em rgba(0,0,0,0.5);
+}
+
+#mainpageinner{
+	color:rgba(255,0,0,0.8);
+}
+#mainpageinner hr{
+	border:0.5px solid rgba(255,0,0,0.1);
+}
+#phonemes{
+	color:rgba(255,0,0,0.3);
+}
+
+
+.phonecticKeyboard{
+	position:fixed;
+	bottom:0;
+	width:100%;
+	margin:0px;
+	padding:0px;
+	text-align:center;
+	background-color:#ffcccc;	
+}
+.c,.v,.d,.e{
+	margin:1px;
+	padding:4px;
+	border-radius:8px;
+	width:2em;
+	background-color:#555555;	
+}
+.v{
+	color:yellow;
+}
+.c{
+	color:#ffffff;	
+}
+.d{
+	color:#ffffff;
+	background-color:#FF6633;	
+}
+.e{
+	color:#ffffff;
+	background-color:#ff6666;	
+}
+
+#keyboardicon{
+	display:inline-block;
+	width:2em;
+	padding:0.5em;
+}
+#keyboardinput{
+	width:90%;
+	border-radius:0.5em;
+	padding:0.3em;
+	text-align:center;
+	color:#666666;
+	background-color:#ffeeee;
+}
+#keyboardbuttons{
+	padding:0em 0.5em 1em 0.5em;
+	display:none;
+}
+
+#matchwordlist{
+	margin-top:5em;
+	margin-bottom:20em;
+	text-align:center;
+	color:#ffffff;
+}
+.wordDetailsDiv{
+	position:fixed;
+	top:0px;
+	width:100%;
+	margin:0px;
+	margin-top:3em;
+	padding:0px;
+}
+#wordDetails{
+	display:none;
+	margin:1em;
+	padding:1em;
+	background-color:#ffdddd;	
+	border-radius:1em;
+	box-shadow:0em 1em 2em rgba(0,0,0,0.5);
+	text-align:center;
+}
+#wordDetails h2{
+	color:rgba(0,0,0,0.3);	
+}
 </STYLE>
 
 
@@ -487,7 +693,8 @@ html{
 					<h4 id="phonemes">E in Dictionary</h4>
 					<h3 id="transliteration">亿忆亦一易</h3>
 					<p id="meaning" class="meaning">
-						用心观想 世间音声
+						用耳倾听 世间音声<br/>
+						用心观想 世间万象<br/>
 					</p>					
 				</div>
 			</div>
@@ -507,19 +714,23 @@ html{
 	<div class="console">
 	
 		<div id="menubuttons" class="menubuttons">
+			
 			<button class="consolebutton" onclick="zoomOut()">-</button>
 			<button class="consolebutton" onclick="skewLeft()">↖</button>
-			<button class="consolebutton" onclick="help()">助</button>
-			<button class="consolebutton" onclick="modify()">改</button>
-			<button class="consolebutton" onclick="save()">存</button>			
 			<button class="consolebutton" onclick="skewRight()">↗</button>
 			<button class="consolebutton" onclick="zoomIn()">+</button>
+			<br/>
+			<button class="consolebutton" onclick="help()">助</button>
+			<button class="consolebutton" onclick="listing()">典</button>
+			<button class="consolebutton" onclick="modify()">改</button>
+			<button class="consolebutton" onclick="save()">存</button>
+			<button class="consolebutton" onclick="find()">查</button>						
 		</div>
 		
 		<div class="inputdiv">
 			<span id="menuicon" class="inputicon" onclick="showMenuButtons()"></span>
 			<input id="word" type="text" class="word" onkeypress="inputEnter(event)"/>
-			<span id="searchicon" class="inputicon" onclick="transliterate();adjustSize();"></span>
+			<span id="searchicon" class="inputicon" onclick="transliterate();adjustSize();flipCover();"></span>
 		</div>
 
 		
@@ -541,6 +752,7 @@ html{
 			点击书封可翻开显示释义<br/>
 			点击菜单按钮可改选译音<br/>
 			译音亦可保存到本地备忘<br/>	
+			还可以显示词典词汇列表<br/>
 			<hr/>
 			<br/>
             本应用客服群
@@ -567,6 +779,116 @@ html{
 		</div>		
 		
 	</div>
+	
+	<!--词汇列表页面-->
+	<div class="listing" id="listing">
+		
+		<div class="wordlist" id="wordlist"></div>
+		
+		<div class="meaningdiv" id="meaningdiv" onclick="toggleMeaning()"></div>
+		
+		<div class="listcontrol">
+			<span id="indexNumber"></span>
+			<br/>
+			<button onclick="nextWords(-1000)" id="btn5" title="后翻1000词">◂</button>
+			<button onclick="nextWords(-100)" id="btn3" title="后翻100词">◂</button>
+			<button onclick="nextWords(-10)" id="btn1" title="后翻10词">◂</button>
+			<button onclick="showWordList()" id="btn0" title="显示单词列表">词</button>			
+			<button onclick="nextWords(10)" id="btn2" title="前翻10词">▸</button>			
+			<button onclick="nextWords(100)" id="btn4" title="前翻100词">▸</button>			
+			<button onclick="nextWords(1000)" id="btn6" title="前翻1000词">▸</button>
+		</div>
+	
+		
+		<div class="closehead">
+			<button class="closebutton" onclick="listing()"></button>
+		</div>		
+		
+	</div>
+	
+	<!--音标反向查找单词页面-->
+	<div class="find" id="find">
+		
+		<div id="matchwordlist"></div>
+		
+		<div class="wordDetailsDiv" onclick="toggleWordDetail()">
+			<div id="wordDetails"></div>		
+		</div>
+		
+		
+		<div class="closehead">
+			<button class="closebutton" onclick="find()"></button>
+		</div>		
+		
+		<div class="phonecticKeyboard" id="phonecticKeyboard">
+			
+			<div id="keyboardicon" onclick="showKeyboard()"></div>
+			
+			<br/>
+			
+			<div id="keyboardbuttons">
+				
+				<input id="keyboardinput" type="text" />
+				
+				<br/><br/>	
+			
+				<button class="v" onclick="inputKey('ː')">ː</button>
+				<button class="v" onclick="inputKey('iː')">iː</button>
+				<button class="v" onclick="inputKey('ɪ')">ɪ</button>
+				<button class="v" onclick="inputKey('e')">e</button>
+				<button class="v" onclick="inputKey('æ')">æ</button>
+				<button class="v" onclick="inputKey('ɜː')">ɜː</button>
+				<button class="v" onclick="inputKey('ə')">ə</button>
+				<button class="v" onclick="inputKey('ɑː')">ɑː</button>
+				<button class="v" onclick="inputKey('ʌ')">ʌ</button>
+				<button class="v" onclick="inputKey('ɔː')">ɔː</button>
+				<button class="v" onclick="inputKey('ɒ')">ɒ</button>
+				<button class="v" onclick="inputKey('uː')">uː</button>
+				<button class="v" onclick="inputKey('ʊ')">ʊ</button>
+				<button class="v" onclick="inputKey('aɪ')">aɪ</button>
+				<button class="v" onclick="inputKey('eɪ')">eɪ</button>
+				<button class="v" onclick="inputKey('aʊ')">aʊ</button>
+				<button class="v" onclick="inputKey('əʊ')">əʊ</button>
+				<button class="v" onclick="inputKey('ɔɪ')">ɔɪ</button>
+				<button class="v" onclick="inputKey('ɪə')">ɪə</button>
+				<button class="v" onclick="inputKey('eə')">eə</button>
+				<button class="v" onclick="inputKey('ʊə')">ʊə</button>
+				
+				<button class="c" onclick="inputKey('j')">j</button>
+				<button class="c" onclick="inputKey('p')">p</button>
+				<button class="c" onclick="inputKey('b')">b</button>
+				<button class="c" onclick="inputKey('t')">t</button>
+				<button class="c" onclick="inputKey('d')">d</button>
+				<button class="c" onclick="inputKey('k')">k</button>
+				<button class="c" onclick="inputKey('g')">g</button>
+				<button class="c" onclick="inputKey('s')">s</button>
+				<button class="c" onclick="inputKey('z')">z</button>
+				<button class="c" onclick="inputKey('tʃ')">tʃ</button>
+				<button class="c" onclick="inputKey('dʒ')">dʒ</button>
+				<button class="c" onclick="inputKey('tr')">tr</button>
+				<button class="c" onclick="inputKey('m')">m</button>
+				<button class="c" onclick="inputKey('n')">n</button>
+				<button class="c" onclick="inputKey('ŋ')">ŋ</button>
+				<button class="c" onclick="inputKey('f')">f</button>
+				<button class="c" onclick="inputKey('v')">v</button>
+				<button class="c" onclick="inputKey('θ')">θ</button>
+				<button class="c" onclick="inputKey('ð')">ð</button>
+				<button class="c" onclick="inputKey('ʃ')">ʃ</button>
+				<button class="c" onclick="inputKey('ʒ')">ʒ</button>
+				<button class="c" onclick="inputKey('h')">h</button>
+				<button class="c" onclick="inputKey('w')">w</button>
+				<button class="c" onclick="inputKey('ɹ')">ɹ</button>
+				<button class="c" onclick="inputKey('r')">r</button>
+				<button class="c" onclick="inputKey('l')">l</button>
+				
+				<button class="d" onclick="clearInput()">⏛</button>
+				<button class="d" onclick="backspace()">←</button>
+				<button class="e" onclick="findByPhoneme()">OK</button>
+			</div>
+		</div>	
+		
+	</div>
+	
 	
 	<!--修改页面-->
 	<div class="modify" id="modify">
@@ -606,6 +928,28 @@ html{
 			</g>
 			
 		</svg>
+		
+		<svg id="keyboardsvg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 240 120">
+			<g style="fill:#666666;stroke:none;">								
+				<rect x="0" y="0" rx="20" ry="20" width="240" height="120"/>
+			</g>			
+			<g style="fill:#ffffff;stroke:none;">					
+				<rect x="20" y="20" width="20" height="20"/>
+				<rect x="50" y="20" width="20" height="20"/>
+				<rect x="80" y="20" width="20" height="20"/>
+				<rect x="110" y="20" width="20" height="20"/>
+				<rect x="140" y="20" width="20" height="20"/>
+				<rect x="170" y="20" width="20" height="20"/>
+				<rect x="200" y="20" width="20" height="20"/>				
+				<rect x="30" y="50" width="20" height="20"/>
+				<rect x="60" y="50" width="20" height="20"/>
+				<rect x="90" y="50" width="20" height="20"/>
+				<rect x="120" y="50" width="20" height="20"/>
+				<rect x="150" y="50" width="20" height="20"/>
+				<rect x="180" y="50" width="20" height="20"/>				
+				<rect x="40" y="80" width="150" height="20"/>
+			</g>
+		</svg>
 
 	</div>
 	
@@ -620,6 +964,7 @@ html{
 	//SVG图片资源添加到对应元素
 	$("#searchicon").append($("#searchsvg"));
 	$("#menuicon").append($("#menusvg"));
+	$("#keyboardicon").append($("#keyboardsvg"));
 	
 	//先设定style然后才能获取到 否则获取不到style字串
 	$("#book").css("transform","perspective(5000px) rotateX(30deg) rotateY(0deg) rotateZ(-24deg) scaleX(1) scaleY(1) scaleZ(1)");
@@ -680,6 +1025,11 @@ html{
 		return scaleValue;		
 	}
 	
+	
+	
+	
+	//----------------------------------------------------
+	
 	//hammer.js管理触屏事件	
 	var hammerTest = new Hammer(document.getElementById('book'));
 	hammerTest.get('swipe').set({direction: Hammer.DIRECTION_ALL});
@@ -690,7 +1040,6 @@ html{
 		rotateY-=5;
 		var bookStyleString=document.getElementById('book').style.transform;
 		var newBookStyleString=bookStyleString.replace(/(rotateY\()(-?\d+)(deg\))/gi,"$1"+rotateY+"$3");
-		//console.log("newBookStyleString = ",newBookStyleString);
 		$("#book").css("transform",newBookStyleString);		
 	});
 	
@@ -700,7 +1049,6 @@ html{
 		rotateY+=5;
 		var bookStyleString=document.getElementById('book').style.transform;
 		var newBookStyleString=bookStyleString.replace(/(rotateY\()(-?\d+)(deg\))/gi,"$1"+rotateY+"$3");
-		//console.log("newBookStyleString = ",newBookStyleString);
 		$("#book").css("transform",newBookStyleString);		
 	});
 	
@@ -710,7 +1058,6 @@ html{
 		rotateX+=5;
 		var bookStyleString=document.getElementById('book').style.transform;
 		var newBookStyleString=bookStyleString.replace(/(rotateX\()(-?\d+)(deg\))/gi,"$1"+rotateX+"$3");
-		//console.log("newBookStyleString = ",newBookStyleString);
 		$("#book").css("transform",newBookStyleString);		
 	});
 	
@@ -720,9 +1067,12 @@ html{
 		rotateX-=5;
 		var bookStyleString=document.getElementById('book').style.transform;
 		var newBookStyleString=bookStyleString.replace(/(rotateX\()(-?\d+)(deg\))/gi,"$1"+rotateX+"$3");
-		//console.log("newBookStyleString = ",newBookStyleString);
 		$("#book").css("transform",newBookStyleString);		
 	});
+	
+	//----------------------------------------------------
+	
+	
 	
 	
 	
@@ -731,10 +1081,8 @@ html{
 		var scale=getScale();
 		scale+=0.1;
 		scale=parseFloat(scale).toFixed(1);
-		//console.log("current scale = "+scale);
 		var bookStyleString=document.getElementById('book').style.transform;
 		var newBookStyleString=bookStyleString.replace(/(scale[X|Y|Z]\()(\d+(\.\d+(e-\d+)?)?)(\))/gi,"$1"+scale+"$5");
-		//console.log("newBookStyleString = ",newBookStyleString);
 		$("#book").css("transform",newBookStyleString);
 	}
 	
@@ -746,10 +1094,8 @@ html{
 			scale=0.1;
 		}
 		scale=parseFloat(scale).toFixed(1);
-		//console.log("current scale = "+scale);
 		var bookStyleString=document.getElementById('book').style.transform;
 		var newBookStyleString=bookStyleString.replace(/(scale[X|Y|Z]\()(\d+(\.\d+(e-\d+)?)?)(\))/gi,"$1"+scale+"$5");
-		//console.log("newBookStyleString = ",newBookStyleString);
 		$("#book").css("transform",newBookStyleString);
 	}
 	
@@ -759,7 +1105,6 @@ html{
 		rotateZ-=6;
 		var bookStyleString=document.getElementById('book').style.transform;
 		var newBookStyleString=bookStyleString.replace(/(rotateZ\()(-?\d+)(deg\))/gi,"$1"+rotateZ+"$3");
-		//console.log("newBookStyleString = ",newBookStyleString);
 		$("#book").css("transform",newBookStyleString);	
 	}
 	
@@ -769,7 +1114,6 @@ html{
 		rotateZ+=6;
 		var bookStyleString=document.getElementById('book').style.transform;
 		var newBookStyleString=bookStyleString.replace(/(rotateZ\()(-?\d+)(deg\))/gi,"$1"+rotateZ+"$3");
-		//console.log("newBookStyleString = ",newBookStyleString);
 		$("#book").css("transform",newBookStyleString);		
 	}
 	
@@ -789,6 +1133,11 @@ html{
 		}		
 	}
 	
+	//词典封面翻转动画
+	function flipCover(){
+		$("#cover").addClass("flip-cover-frame");		
+	}
+	
 	//显示帮助界面
 	function help(){
 		$("#help").slideToggle("slow");
@@ -797,9 +1146,21 @@ html{
 	function modify(){
 		$("#modify").slideToggle("slow");
 	}
+	//显示词典所有词汇列表
+	function listing(){
+		$("#listing").slideToggle("slow");
+	}
 	//显示保存界面
 	function saveShow(){
 		$("#save").slideToggle("slow");
+	}
+	//显示音标反向查找单词界面
+	function find(){
+		$("#find").slideToggle("slow");
+	}
+	//显示音标键盘按键
+	function showKeyboard(){
+		$("#keyboardbuttons").slideToggle("slow");
 	}
 	//显示菜单按钮
 	function showMenuButtons(){
@@ -811,6 +1172,7 @@ html{
 		if (event.keyCode == 13) {
 			transliterate();
 			adjustSize();
+			flipCover();
         }
 	}
 	
@@ -828,6 +1190,114 @@ html{
 			$("#cover").outerHeight(cover);
 		}
 	}
+	
+	//显示单词列表
+	var words=[];
+	var meanings=[];
+	var pronunciations=[];
+	var wordCount=0;
+	var currentIndex=0;
+	
+	//从localStorage中提取currentIndex
+	if(localStorage){
+		wordIndex=localStorage.getItem("wordIndex");
+		if(wordIndex){
+			currentIndex=parseInt(wordIndex)||0;			
+		}else{
+			localStorage.setItem("wordIndex",0);
+		}
+	}
+	
+	//显示单词列表前面10条
+	function showWordList(){
+		words=[];
+		for(word in wordMeaning){
+			words.push(word.replace("$",""));
+			meanings.push(wordMeaning[word]);
+			if(phonetics[word]!=undefined){
+				pronunciations.push(phonetics[word]);
+			}else{
+				pronunciations.push("");
+			}			
+		}
+		wordCount=words.length;
+		nextWords(0);		
+	}
+	
+	//前进或后退显示词汇列表
+	function nextWords(stepNumber){
+		if(wordCount==0){
+			return;
+		}
+		currentIndex+=stepNumber;
+		if(currentIndex<0){
+			currentIndex=0;
+		}
+		if(currentIndex>wordCount-1){
+			currentIndex=wordCount-1;
+		}
+		
+		//currentIndex存入localStorage以备下次开机后显示上次位置
+		if(localStorage){
+			localStorage.setItem("wordIndex",currentIndex);
+		}
+		
+		var wordListHtml="";
+		for(var i=0;i<10;i++){
+			index=currentIndex+i;
+			if(index<wordCount){
+				wordListHtml+="<span class='listed-word' onclick='showWordMeaning("+index+")'>"+words[index]+"</span><br/><span class='listed-pronunciation' onclick='showWordMeaning("+index+")'>"+pronunciations[index]+"</span><hr/>";
+				$("#indexNumber").html(index+1);
+			}
+		}
+		$("#wordlist").html(wordListHtml);
+	}
+	
+	
+	
+	//----------------------------------------------------
+	//动画效果结束后剔除便于下次重新启用
+	document.getElementById("wordlist").addEventListener("animationend",function(){
+		document.getElementById("wordlist").classList.remove("animation-frame");
+		document.getElementById("wordlist").classList.remove("animation-frame0");
+	});
+	
+	document.getElementById("cover").addEventListener("animationend",function(){
+		document.getElementById("cover").classList.remove("flip-cover-frame");
+	});
+	//----------------------------------------------------
+	
+	
+	
+	//显示单词释义
+	function showWordMeaning(x){
+		meaningHtml="<div class='innerMeaningdiv'><h1>"+words[x]+"</h1><h2>"+pronunciations[x]+"</h2>"+meanings[x].replace(/\w+\./g, "<br/><br/>$& ")+"</div>";
+		$("#meaningdiv").html(meaningHtml);
+		$("#meaningdiv").fadeIn("slow");		
+	}
+	
+	//显示或隐藏列表单词的详细释义
+	function toggleMeaning(){
+		$("#meaningdiv").fadeToggle("slow");
+	}
+	
+	//----------------------------------------------------
+	//hammer.js滑屏控制事件响应 用以控制词汇列表页面的前后翻动浏览
+	var hammerTest0=new Hammer(document.getElementById('listing'));
+	hammerTest0.get('swipe').set({direction: Hammer.DIRECTION_ALL});
+	
+	hammerTest0.on("swipeleft",function(ev){
+		nextWords(10);	
+		$("#wordlist").addClass("animation-frame");
+	});
+	hammerTest0.on("swiperight",function(ev){
+		nextWords(-10);	
+		$("#wordlist").addClass("animation-frame0");
+	});
+	//----------------------------------------------------
+	
+	
+	
 	
 	//-----------------------------------------------
 	//主程序
@@ -914,7 +1384,7 @@ html{
 		var meaningOfWord = findWordMeaning(englishWordLowerCase);
 		$("#meaning").html("");
         if (meaningOfWord != undefined) {
-			meaningOfWord = meaningOfWord.replace(/\w+\./g, "<br/>$&");
+			meaningOfWord = meaningOfWord.replace(/\w+\./g, "<br/>$& ");
             $("#meaning").html(meaningOfWord);
         }
 		
@@ -1059,7 +1529,59 @@ html{
 	}
 	
 	
+	//音标键盘输入
+	function inputKey(key){
+		var oldValue=$("#keyboardinput").val();
+		var newValue=oldValue+key;
+		$("#keyboardinput").val(newValue);
+	}
+	//删除输入音标的最后一个音标符号
+	function backspace(){
+		var oldValue=$("#keyboardinput").val();
+		var newValue=oldValue.replace(/.$/,"");
+		$("#keyboardinput").val(newValue);
+	}
+	//通过音标反向查找单词
+	function findByPhoneme(){
+		var pronunciation=$("#keyboardinput").val();
+		if(pronunciation.replace(" ","")==""){
+			console.log("你还没有输入音标符号！");
+			return;
+		}
+		var r=new RegExp(pronunciation,"gi"); 
+		var text="";
+		for(key in phonetics){
+			var p=phonetics[key];
+			if(r.test(p)){
+				var word=key.replace("$","");
+				text+="<span class='listed-word' onclick=\"showWordDetail('"+word+"','"+p.replace("'","\\'")+"')\">"+word+"</span><br/><span class='listed-pronunciation' onclick=\"showWordDetail('"+word+"','"+p.replace("'","\\'")+"')\">"+p+"</span><hr/>";
+				console.log(text);
+			}				
+		}
+		$("#matchwordlist").html(text);
+		if(text==""){
+			$("#matchwordlist").html("没有匹配的词");			
+			setTimeout(function(){$("#matchwordlist").html("");}, 2000);
+		}
+		console.log("the search is completed!");
+		
+	}
+	//清除音标输入框所有字符
+	function clearInput(){
+		$("#keyboardinput").val("");
+	}
+	//点击单词显示释义
+	function showWordDetail(word,pronunciation){
+		var text="";
+		var meaning=wordMeaning["$"+word];
+		text+="<h1>"+word+"</h1><h2>"+pronunciation+"</h2><p>"+meaning.replace(/\w+\./g, "<br/>$& ")+"</p>";
+		$("#wordDetails").html(text);
+		$("#wordDetails").fadeIn("slow");	
+	}
 	
+	function toggleWordDetail(){
+		$("#wordDetails").fadeToggle("slow");
+	}
 	
 
 </SCRIPT>
